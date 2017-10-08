@@ -457,7 +457,9 @@ class ModelForm(six.with_metaclass(*bases)):
     ``autocomplete_names`` understand generic foreign key and generic many to
     many descriptor names.
     """
-    __metaclass__ = ModelFormMetaclass
+    # this ModelFormMetaclass should be subclass of the forms.ModelForm's meta class,
+    # but forms.ModelForm has no meta class
+    # __metaclass__ = ModelFormMetaclass
 
 
 def modelform_factory(model, autocomplete_fields=None,
